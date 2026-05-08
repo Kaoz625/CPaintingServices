@@ -14,6 +14,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
+  <script>
+    (function(){
+      if(!sessionStorage.getItem('lang-pref')){
+        var l=(navigator.language||navigator.userLanguage||'').slice(0,2);
+        if(l==='es'){
+          var m={'index.html':'index.html','about.html':'about.html','faq.html':'faq.html','gallery.html':'gallery.html','interior-painting.html':'interior-painting.html','exterior-painting.html':'exterior-painting.html','commercial-painting.html':'commercial-painting.html','brooklyn.html':'brooklyn.html','queens.html':'queens.html','manhattan.html':'manhattan.html','contact.html':'contact.html'};
+          var p=location.pathname.split('/').pop()||'index.html';
+          location.replace('/es/'+(m[p]||'index.html'));
+        }
+      }
+    })();
+  </script>
   <style>
     .about-grid {
       display: grid;
@@ -114,7 +126,7 @@
             (347) 469-8202
           </a>
           <a href="contact.html" class="btn btn-primary">Free Estimate</a>
-          <a href="es/index.html" class="lang-toggle" aria-label="Versión en español">ES</a>
+          <a href="es/about.html" class="lang-toggle" onclick="sessionStorage.setItem('lang-pref','es')" aria-label="Versión en español">ES</a>
           <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
             <span></span><span></span><span></span>
           </button>
@@ -288,7 +300,7 @@
       </div>
       <div class="footer-bottom">
         <span>&copy; 2026 C Painting Services. All 5 NYC Boroughs.</span>
-        <span class="footer-built-by">Website by <a href="https://nyctailblazers.com" target="_blank" rel="noopener">NYC Tailblazers</a></span>
+        <span class="footer-built-by">Website by <a href="tailblazers.html">NYC Tailblazers</a> &mdash; Veterans building community through tech.</span>
         <a href="#">Yelp Reviews</a>
       </div>
     </div>

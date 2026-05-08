@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre Nosotros | C Painting Services NYC</title>
+  <meta name="description" content="Contratistas de pintura licenciados en NYC. Conozca nuestro equipo, proceso y por qué propietarios y negocios de los cinco condados confían en nosotros.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <script>sessionStorage.setItem('lang-pref','es');</script>
+  <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .about-grid .about-text { display: flex; flex-direction: column; gap: 1.25rem; }
+    .about-grid .about-text p { color: var(--text-muted); }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .value-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .value-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      background: rgba(232,99,10,.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+    }
+    .value-card h4 { font-size: 1rem; font-weight: 700; }
+    .value-card p { font-size: .9rem; color: var(--text-muted); max-width: none; }
+    .trust-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-top: 1rem;
+    }
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .5rem 1.1rem;
+      border-radius: 100px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      font-size: .85rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .trust-badge svg { color: var(--accent); }
+    .paint-brands {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-top: 1.25rem;
+    }
+    .brand-pill {
+      padding: .55rem 1.25rem;
+      border-radius: 100px;
+      background: var(--white);
+      border: 2px solid var(--border);
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: .02em;
+    }
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="../index.html" class="logo">C Painting<span>Services</span></a>
+        <nav class="main-nav" id="main-nav">
+          <a href="../index.html">Inicio</a>
+          <a href="../interior-painting.html">Interior</a>
+          <a href="../exterior-painting.html">Exterior</a>
+          <a href="../commercial-painting.html">Comercial</a>
+          <a href="../gallery.html">Galería</a>
+          <a href="../about.html">Sobre Nosotros</a>
+          <a href="../faq.html">FAQ</a>
+          <a href="../contact.html">Contacto</a>
+        </nav>
+        <div class="header-cta">
+          <a href="tel:+13474698202" class="header-phone">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (347) 469-8202
+          </a>
+          <a href="../contact.html" class="btn btn-primary">Estimado Gratis</a>
+          <a href="../about.html" class="lang-toggle" onclick="sessionStorage.setItem('lang-pref','en')" aria-label="English version">EN</a>
+          <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="breadcrumb">
+    <div class="container">
+      <a href="../index.html">Inicio</a>
+      <span>&rsaquo;</span>
+      Sobre Nosotros
+    </div>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Quiénes Somos</p>
+      <h1>Pintores de NYC que Llegan y Cumplen</h1>
+      <p>Sin intermediarios. Sin subcontratistas. El mismo equipo que responde tu llamada es el que aparece.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <h2>Pintores Locales. Artesanos de Verdad.</h2>
+          <p>C Painting Services es una empresa de pintura con base en Queens, Nueva York. Servimos a propietarios, arrendadores y negocios en los cinco condados — desde una renovación de un solo cuarto hasta obras comerciales completas.</p>
+          <p>No usamos subcontratistas. El mismo equipo que toma tu llamada es el que aparece en tu puerta. Eso significa calidad consistente, comunicación clara y gente que realmente se preocupa por el trabajo.</p>
+          <p>Usamos solo pinturas premium — Benjamin Moore y Sherwin-Williams — porque hemos visto cómo luce la pintura barata dos años después. Cada trabajo incluye preparación completa de superficies, protección de muebles con lonas y plástico, y limpieza total antes de irnos.</p>
+          <p>Completamente licenciados y asegurados en el Estado de Nueva York. Seguro de responsabilidad y compensación laboral en cada trabajo. Estás protegido, y nosotros también.</p>
+        </div>
+        <div>
+          <img
+            src="../images/team-photo.jpg"
+            alt="Equipo de C Painting Services en un trabajo en Queens, NYC"
+            style="border-radius:var(--radius-lg);width:100%"
+            onerror="this.outerHTML='<div style=\'aspect-ratio:4/3;background:#e8e2d9;display:flex;align-items:center;justify-content:center;border-radius:var(--radius-lg);color:#888;font-size:.9rem\'>Foto próximamente</div>'"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--surface)">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Nuestros Estándares</span>
+        <h2>En Qué Creemos</h2>
+        <p>Tres cosas en las que no comprometemos, sin importar el tamaño del trabajo.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4>Licenciado y Asegurado</h4>
+          <p>Completamente licenciados en el Estado de Nueva York. Llevamos seguro de responsabilidad completo y compensación laboral — en cada trabajo. Tu propiedad y nuestro equipo siempre están cubiertos.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h4>Puntual y Confiable</h4>
+          <p>Confirmamos 24 horas antes de cada trabajo y llegamos a tiempo. Sin desaparecer, sin retrasos, sin excusas. Si algo cambia, te llamamos primero.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h4>Trabajo Garantizado</h4>
+          <p>Cada trabajo termina con una revisión. Si encuentras algo con lo que no estás satisfecho, lo arreglamos antes de irnos. Tu aprobación es la única que cuenta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Credenciales</span>
+        <h2>Licenciados, Asegurados y Listos</h2>
+        <p>Todo en orden antes de poner un pie en tu espacio.</p>
+      </div>
+      <div class="trust-badges">
+        <span class="trust-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Licencia del Estado de NY
+        </span>
+        <span class="trust-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Seguro de Responsabilidad
+        </span>
+        <span class="trust-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Compensación Laboral
+        </span>
+        <span class="trust-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Sin Subcontratistas
+        </span>
+        <span class="trust-badge">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Calificación 5 Estrellas en Yelp
+        </span>
+      </div>
+      <div style="margin-top:3rem">
+        <p class="eyebrow" style="font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem">Pinturas Que Usamos</p>
+        <p style="color:var(--text-muted);font-size:.95rem;max-width:52ch">Solo aplicamos pinturas de primera calidad de dos de las marcas más confiables de la industria.</p>
+        <div class="paint-brands">
+          <span class="brand-pill">Benjamin Moore</span>
+          <span class="brand-pill">Sherwin-Williams</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>¿Listo para Transformar Tu Espacio?</h2>
+      <p>Llama o llena nuestro formulario — respondemos en 24 horas.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center">
+        <a href="../contact.html" class="btn btn-white btn-lg">Obtén un Estimado Gratis &rarr;</a>
+        <a href="tel:+13474698202" class="btn btn-lg" style="background:rgba(255,255,255,.15);color:#fff;border:2px solid rgba(255,255,255,.5)">(347) 469-8202</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo">C Painting<span>Services</span></a>
+          <p>Pintores licenciados en NYC sirviendo los cinco condados.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Servicios</h5>
+          <ul>
+            <li><a href="../interior-painting.html">Pintura Interior</a></li>
+            <li><a href="../exterior-painting.html">Pintura Exterior</a></li>
+            <li><a href="../commercial-painting.html">Pintura Comercial</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Condados</h5>
+          <ul>
+            <li><a href="../brooklyn.html">Brooklyn</a></li>
+            <li><a href="../queens.html">Queens</a></li>
+            <li><a href="../manhattan.html">Manhattan</a></li>
+            <li><span>Bronx</span></li>
+            <li><span>Staten Island</span></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contacto</h5>
+          <ul>
+            <li><a href="tel:+13474698202">(347) 469-8202</a></li>
+            <li><a href="mailto:info@cpaintingservices.com">info@cpaintingservices.com</a></li>
+            <li><span>Lun&ndash;Sáb 8AM&ndash;6PM</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 C Painting Services. Los 5 Condados de NYC.</span>
+        <span class="footer-built-by">Sitio web por <a href="../tailblazers.html">NYC Tailblazers</a> &mdash; Veteranos construyendo comunidad a través de la tecnología.</span>
+        <a href="#">Yelp</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('main-nav');
+    hamburger.addEventListener('click', function () {
+      const open = nav.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>
