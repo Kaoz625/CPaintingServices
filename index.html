@@ -17,14 +17,7 @@
   <link rel="stylesheet" href="css/main.css">
   <script>
     (function(){
-      if(!sessionStorage.getItem('lang-pref')){
-        var l=(navigator.language||navigator.userLanguage||'').slice(0,2);
-        if(l==='es'){
-          var m={'index.html':'index.html','about.html':'about.html','faq.html':'faq.html','gallery.html':'gallery.html','interior-painting.html':'interior-painting.html','exterior-painting.html':'exterior-painting.html','commercial-painting.html':'commercial-painting.html','brooklyn.html':'brooklyn.html','queens.html':'queens.html','manhattan.html':'manhattan.html','contact.html':'contact.html'};
-          var p=location.pathname.split('/').pop()||'index.html';
-          location.replace('/es/'+(m[p]||'index.html'));
-        }
-      }
+      if(sessionStorage.getItem('lang-pref')!=='en'){location.replace('/es/');}
     })();
   </script>
   <script type="application/ld+json">
