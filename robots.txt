@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cpaintingservices.nyctailblazers.com/sitemap.xml

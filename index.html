@@ -1,440 +1,419 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C Painting Services | Expert Painters in Brooklyn</title>
-    <style>
-        :root {
-            --primary-blue: #0A3A66;
-            --accent-orange: #FF6B35;
-            --light-bg: #F8F9FA;
-            --clean-white: #FFFFFF;
-            --dark-text: #2D3748;
-            --gray-text: #718096;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            color: var(--dark-text);
-            line-height: 1.6;
-        }
-
-        /* Header */
-        header {
-            background-color: var(--clean-white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-top {
-            background-color: var(--primary-blue);
-            color: var(--clean-white);
-            padding: 8px 5%;
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--primary-blue);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo span {
-            color: var(--accent-orange);
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 30px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--dark-text);
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--accent-orange);
-        }
-
-        .btn-quote {
-            background-color: var(--accent-orange);
-            color: var(--clean-white);
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.3s;
-        }
-
-        .btn-quote:hover {
-            background-color: #E55A25;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(10, 58, 102, 0.8), rgba(10, 58, 102, 0.8)), url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1600&q=80') center/cover;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            padding: 0 5%;
-            color: var(--clean-white);
-        }
-
-        .hero-content {
-            max-width: 600px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            color: #E2E8F0;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-        }
-
-        .btn-outline {
-            border: 2px solid var(--clean-white);
-            color: var(--clean-white);
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-
-        .btn-outline:hover {
-            background-color: var(--clean-white);
-            color: var(--primary-blue);
-        }
-
-        /* Services Section */
-        .services {
-            padding: 80px 5%;
-            background-color: var(--light-bg);
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-        }
-
-        .section-subtitle {
-            color: var(--gray-text);
-            max-width: 600px;
-            margin: 0 auto 50px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: var(--clean-white);
-            padding: 40px 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-bottom: 4px solid var(--accent-orange);
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            color: var(--primary-blue);
-            margin: 20px 0 15px;
-        }
-
-        /* Why Choose Us */
-        .why-us {
-            padding: 80px 5%;
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
-
-        .why-us-content {
-            flex: 1;
-        }
-
-        .why-us-image {
-            flex: 1;
-        }
-
-        .why-us-image img {
-            width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .feature-list {
-            list-style: none;
-            margin-top: 30px;
-        }
-
-        .feature-list li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 1.1rem;
-            font-weight: 600;
-        }
-
-        .check-icon {
-            color: var(--accent-orange);
-            font-size: 1.5rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            background-color: var(--primary-blue);
-            color: var(--clean-white);
-            padding: 80px 5%;
-            text-align: center;
-        }
-
-        .contact h2 {
-            font-size: 2.5rem;
-            color: var(--clean-white);
-            margin-bottom: 20px;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .contact-card {
-            padding: 30px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 8px;
-        }
-
-        .contact-card h3 {
-            color: var(--accent-orange);
-            margin-bottom: 10px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: #051C33;
-            color: #A0AEC0;
-            text-align: center;
-            padding: 40px 5% 20px;
-        }
-
-        .footer-logo {
-            font-size: 1.5rem;
-            color: var(--clean-white);
-            font-weight: bold;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-
-        .footer-logo span {
-            color: var(--accent-orange);
-        }
-
-        .builder-tag {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            font-size: 0.9rem;
-            line-height: 1.8;
-        }
-
-        .builder-tag a {
-            color: #FFD700;
-            text-decoration: none;
-            font-weight: bold;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-        }
-
-        .builder-tag a:hover {
-            color: var(--accent-orange);
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-container ul {
-                display: none;
-            }
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .why-us {
-                flex-direction: column;
-            }
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C Painting Services | NYC Painters — Queens, Bronx, Manhattan</title>
+  <meta name="description" content="Licensed NYC painters serving all five boroughs. Free estimates. Interior, exterior, commercial painting. Call (347) 469-8202.">
+  <link rel="canonical" href="https://cpaintingservices.nyctailblazers.com/">
+  <meta property="og:title" content="C Painting Services | NYC Painters — Queens, Bronx, Manhattan">
+  <meta property="og:description" content="Licensed NYC painters serving all five boroughs. Free estimates. Interior, exterior, commercial painting. Call (347) 469-8202.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://cpaintingservices.nyctailblazers.com/">
+  <meta property="og:image" content="https://cpaintingservices.nyctailblazers.com/images/hero-painting-crew.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"LocalBusiness","name":"C Painting Services","telephone":"(347) 469-8202","email":"info@cpaintingservices.com","address":{"@type":"PostalAddress","addressLocality":"Queens","addressRegion":"NY","addressCountry":"US"},"areaServed":["Queens","Brooklyn","Manhattan","Bronx","Staten Island"],"openingHours":"Mo-Sa 08:00-18:00","priceRange":"$$","url":"https://cpaintingservices.nyctailblazers.com"}
+  </script>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="header-top">
-            <div>📍 Serving Brooklyn & Surrounding Areas</div>
-            <div>⏰ Mon-Sat: 8am - 6pm</div>
+  <!-- ─── Header ─────────────────────────────────────────── -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo">C Painting<span>Services</span></a>
+        <nav class="main-nav" id="main-nav">
+          <a href="index.html">Home</a>
+          <a href="services.html">Services</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="about.html">About</a>
+          <a href="faq.html">FAQ</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-cta">
+          <a href="tel:+13474698202" class="header-phone">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.18 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (347) 469-8202
+          </a>
+          <a href="contact.html" class="btn btn-primary">Free Estimate</a>
+          <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
         </div>
-        <div class="nav-container">
-            <a href="#" class="logo">C Painting <span>Services</span></a>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <a href="#contact" class="btn-quote">Get a Free Estimate</a>
-        </div>
-    </header>
+      </div>
+    </div>
+  </header>
 
-    <!-- Hero -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Transform Your Space With Professional Precision.</h1>
-            <p>Brooklyn's trusted painting professionals. We deliver flawless finishes, on time and on budget, for residential and commercial properties.</p>
-            <div class="hero-buttons">
-                <a href="#services" class="btn-outline">Our Services</a>
-                <a href="#contact" class="btn-quote">Book a Consultation</a>
-            </div>
+  <!-- ─── Hero ───────────────────────────────────────────── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="borough-chips">
+          <span class="chip">Queens</span>
+          <span class="chip">Bronx</span>
+          <span class="chip">Manhattan</span>
+          <span class="chip">Brooklyn</span>
+          <span class="chip">Staten Island</span>
         </div>
-    </section>
+        <h1>NYC Painting <em>Done Right.</em></h1>
+        <p class="lead">Licensed and insured painters serving all five boroughs. Free estimates. Quality you can see — craftsmanship you can trust.</p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn btn-primary btn-lg">Get a Free Estimate &rarr;</a>
+          <a href="tel:+13474698202" class="btn btn-outline btn-lg">&#9990; (347) 469-8202</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Services -->
-    <section id="services" class="services">
-        <h2 class="section-title">Our Painting Expertise</h2>
-        <p class="section-subtitle">We bring years of experience to every brushstroke. No job is too big or too small for our dedicated team.</p>
-        
-        <div class="services-grid">
-            <div class="service-card">
-                <h3>Interior Painting</h3>
-                <p>Refresh your living room, kitchen, or entire home. We protect your furniture and deliver perfectly smooth, vibrant walls.</p>
-            </div>
-            <div class="service-card">
-                <h3>Exterior Painting</h3>
-                <p>Boost your curb appeal and protect your home from the elements with our premium exterior painting and weather-proofing.</p>
-            </div>
-            <div class="service-card">
-                <h3>Commercial Spaces</h3>
-                <p>Professional painting for offices, retail stores, and warehouses. We work efficiently to minimize disruption to your business.</p>
-            </div>
+  <!-- ─── Trust Bar ───────────────────────────────────────── -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="trust-bar-inner">
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Licensed &amp; Insured
         </div>
-    </section>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          5-Star Rated
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Free Estimates
+        </div>
+        <div class="trust-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          All 5 Boroughs
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <!-- Why Choose Us -->
-    <section id="about" class="why-us">
-        <div class="why-us-image">
-            <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=800&q=80" alt="Professional Painters Working">
-        </div>
-        <div class="why-us-content">
-            <h2 class="section-title" style="text-align: left;">Why Brooklyn Chooses Us</h2>
-            <p style="color: var(--gray-text); font-size: 1.1rem; margin-bottom: 20px;">
-                At C Painting Services, we believe in doing things right the first time. Our reputation on Yelp speaks for itself—we are committed to excellence, cleanliness, and total customer satisfaction.
-            </p>
-            <ul class="feature-list">
-                <li><span class="check-icon">✓</span> Fully Licensed & Insured</li>
-                <li><span class="check-icon">✓</span> Premium Quality Paints (Benjamin Moore, Sherwin-Williams)</li>
-                <li><span class="check-icon">✓</span> Meticulous Prep & Cleanup Process</li>
-                <li><span class="check-icon">✓</span> Transparent, Upfront Pricing</li>
-            </ul>
-        </div>
-    </section>
+  <!-- ─── Services ────────────────────────────────────────── -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">What We Do</span>
+        <h2>Professional Painting for Every Job</h2>
+        <p>From a single room to a commercial buildout, we handle it all — on time, on budget, and spotless when we leave.</p>
+      </div>
+      <div class="services-grid">
+        <a href="interior-painting.html" class="service-card">
+          <div class="service-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Interior Painting</h3>
+          <p>Walls, ceilings, trim, and cabinets. We protect your furniture, prep surfaces properly, and clean up completely.</p>
+          <span class="service-link">Learn more &rarr;</span>
+        </a>
+        <a href="exterior-painting.html" class="service-card">
+          <div class="service-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <h3>Exterior Painting</h3>
+          <p>Brownstones, brick, siding, and storefronts. Weatherproof finishes that hold up to NYC winters and summers alike.</p>
+          <span class="service-link">Learn more &rarr;</span>
+        </a>
+        <a href="commercial-painting.html" class="service-card">
+          <div class="service-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <h3>Commercial Painting</h3>
+          <p>Offices, restaurants, retail, and multi-unit buildings. We work nights and weekends to minimize downtime.</p>
+          <span class="service-link">Learn more &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <!-- Contact -->
-    <section id="contact" class="contact">
-        <h2>Ready for a Fresh Coat?</h2>
-        <p>Contact us today for a free, no-obligation estimate on your next project.</p>
-        
-        <div class="contact-grid">
-            <div class="contact-card">
-                <h3>Call Us</h3>
-                <p>Let's discuss your project.</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin-top: 10px;">(347) 469-8202</p>
-            </div>
-            <div class="contact-card">
-                <h3>Email Us</h3>
-                <p>Send us your details.</p>
-                <p style="font-weight: bold; font-size: 1.1rem; margin-top: 10px;">info@cpaintingservices.com</p>
-            </div>
+  <!-- ─── Process ─────────────────────────────────────────── -->
+  <section style="background:var(--surface)">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">How It Works</span>
+        <h2>Simple. Clean. Done Right.</h2>
+        <p>We keep the process transparent from the first call to the final walk-through.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step">
+          <h4>Free Estimate</h4>
+          <p>We come to you, assess the space, and give you a clear written quote — no pressure, no surprises.</p>
         </div>
-        <div style="margin-top:2rem; text-align:center;">
-            <h3 style="margin-bottom:1rem;">Request a Free Estimate</h3>
-            <iframe src="https://docs.google.com/forms/d/e/1ObP4-B5d-DMkrTU3R6L_AJf0oDmrjPxiJwfGVKDUgtk/viewform?embedded=true"
-                width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0"
-                style="max-width:700px; border-radius:12px; box-shadow:0 4px 20px rgba(0,0,0,0.1);">
-                Loading…
-            </iframe>
+        <div class="process-step">
+          <h4>Schedule Your Job</h4>
+          <p>Pick a date that works. We confirm 24 hours before and show up on time, every time.</p>
         </div>
-            <div class="contact-card">
-                <h3>Service Area</h3>
-                <p>Proudly Serving</p>
-                <p style="font-weight: bold; font-size: 1.1rem; margin-top: 10px;">Brooklyn, NY & 5 Boroughs</p>
-            </div>
+        <div class="process-step">
+          <h4>We Paint</h4>
+          <p>Our crew protects your space, preps surfaces, and applies premium paint with precision and care.</p>
         </div>
-    </section>
+        <div class="process-step">
+          <h4>Walk-Through &amp; Sign-Off</h4>
+          <p>You inspect every inch with us. We touch up anything you want before we leave — guaranteed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-logo">C Painting <span>Services</span></div>
-        <p>&copy; 2026 C Painting Services Brooklyn. All Rights Reserved.</p>
-        
-        <!-- NYC Tailblazers Branding -->
-        <div class="builder-tag">
-            Proudly built, designed, and maintained by <br>
-            <a href="https://instagram.com/nyctailblazers" target="_blank">🐾 NYC TAILBLAZERS - DIGITAL SOLUTIONS & LIFESTYLE MANAGEMENT 🐾</a><br>
-            <em>Making lives easier, one solution at a time.</em>
+  <!-- ─── Gallery Teaser ──────────────────────────────────── -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Our Work</span>
+        <h2>Before &amp; After Results</h2>
+        <p>Every project tells a story. Here are a few of our recent transformations across New York City.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-pair">
+          <div class="gallery-pair-images">
+            <img src="images/interior-before.jpg" alt="Interior before painting" class="gallery-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'gallery-img img-placeholder',style:'aspect-ratio:4/3;background:#e8e2d9;display:flex;align-items:center;justify-content:center;color:#888;font-size:.8rem',textContent:'Before'}))">
+            <img src="images/interior-after.jpg" alt="Interior after painting" class="gallery-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'gallery-img img-placeholder',style:'aspect-ratio:4/3;background:#d4cfc8;display:flex;align-items:center;justify-content:center;color:#888;font-size:.8rem',textContent:'After'}))">
+          </div>
+          <div class="gallery-label">
+            <strong>Living Room Refresh</strong>
+            <div class="before-after-badge">
+              <span class="badge-before">Before</span>
+              <span class="badge-after">After</span>
+            </div>
+          </div>
+          <div style="padding:.25rem 1rem .75rem"><span style="font-size:.78rem;color:var(--text-muted);font-weight:600">Queens · Interior</span></div>
         </div>
-    </footer>
+        <div class="gallery-pair">
+          <div class="gallery-pair-images">
+            <img src="images/exterior-before.jpg" alt="Exterior before painting" class="gallery-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'gallery-img img-placeholder',style:'aspect-ratio:4/3;background:#e8e2d9;display:flex;align-items:center;justify-content:center;color:#888;font-size:.8rem',textContent:'Before'}))">
+            <img src="images/exterior-after.jpg" alt="Exterior after painting" class="gallery-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'gallery-img img-placeholder',style:'aspect-ratio:4/3;background:#d4cfc8;display:flex;align-items:center;justify-content:center;color:#888;font-size:.8rem',textContent:'After'}))">
+          </div>
+          <div class="gallery-label">
+            <strong>Brownstone Exterior</strong>
+            <div class="before-after-badge">
+              <span class="badge-before">Before</span>
+              <span class="badge-after">After</span>
+            </div>
+          </div>
+          <div style="padding:.25rem 1rem .75rem"><span style="font-size:.78rem;color:var(--text-muted);font-weight:600">Brooklyn · Exterior</span></div>
+        </div>
+        <div class="gallery-pair">
+          <div class="gallery-pair-images">
+            <div class="gallery-img" style="aspect-ratio:4/3;background:#e8e2d9;display:flex;align-items:center;justify-content:center;color:#888;font-size:.8rem">Before</div>
+            <img src="images/commercial-painting.jpg" alt="Commercial space after painting" class="gallery-img" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'gallery-img img-placeholder',style:'aspect-ratio:4/3;background:#d4cfc8;display:flex;align-items:center;justify-content:center;color:#888;font-size:.8rem',textContent:'After'}))">
+          </div>
+          <div class="gallery-label">
+            <strong>Restaurant Buildout</strong>
+            <div class="before-after-badge">
+              <span class="badge-before">Before</span>
+              <span class="badge-after">After</span>
+            </div>
+          </div>
+          <div style="padding:.25rem 1rem .75rem"><span style="font-size:.78rem;color:var(--text-muted);font-weight:600">Manhattan · Commercial</span></div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2.5rem">
+        <a href="gallery.html" class="btn btn-outline">See All Projects &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Testimonials ────────────────────────────────────── -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">What Clients Say</span>
+        <h2>Real Reviews. Real NYC.</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"They painted my entire apartment in two days. Clean lines, zero mess, zero smell. They protected everything and were out by 5 PM."</p>
+          <div class="testimonial-author">
+            <strong>Marcus D.</strong>
+            <span>Queens</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"Professional from the first call to the final walk-through. They moved furniture, covered everything, touched up every corner. Will use again."</p>
+          <div class="testimonial-author">
+            <strong>Sandra L.</strong>
+            <span>Bronx</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"Did our restaurant on a Sunday, done by Monday morning. Not a single day of business lost."</p>
+          <div class="testimonial-author">
+            <strong>Tony R.</strong>
+            <span>Manhattan</span>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2.5rem">
+        <a href="#" class="yelp-badge">
+          <span class="yelp-dot"></span>
+          Leave Us a Review on Yelp &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Service Areas ───────────────────────────────────── -->
+  <section>
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Where We Work</span>
+        <h2>Serving Every Borough</h2>
+        <p>From Astoria to Tottenville, from Riverdale to Red Hook — if it's in NYC, we paint it.</p>
+      </div>
+      <div class="areas-grid">
+        <a href="queens.html" class="area-card">
+          <h4>Queens</h4>
+          <ul>
+            <li>Astoria</li>
+            <li>Jackson Heights</li>
+            <li>Flushing</li>
+            <li>Jamaica</li>
+            <li>Forest Hills</li>
+          </ul>
+        </a>
+        <a href="brooklyn.html" class="area-card">
+          <h4>Brooklyn</h4>
+          <ul>
+            <li>Park Slope</li>
+            <li>Bed-Stuy</li>
+            <li>Williamsburg</li>
+            <li>Crown Heights</li>
+            <li>DUMBO</li>
+          </ul>
+        </a>
+        <a href="manhattan.html" class="area-card">
+          <h4>Manhattan</h4>
+          <ul>
+            <li>Harlem</li>
+            <li>Washington Heights</li>
+            <li>Upper West Side</li>
+            <li>Midtown</li>
+            <li>Lower East Side</li>
+          </ul>
+        </a>
+        <a href="#" class="area-card">
+          <h4>Bronx</h4>
+          <ul>
+            <li>Riverdale</li>
+            <li>Fordham</li>
+            <li>Mott Haven</li>
+            <li>Pelham Bay</li>
+            <li>Co-op City</li>
+          </ul>
+        </a>
+        <a href="#" class="area-card">
+          <h4>Staten Island</h4>
+          <ul>
+            <li>St. George</li>
+            <li>Tottenville</li>
+            <li>New Springville</li>
+            <li>Stapleton</li>
+          </ul>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ Teaser ──────────────────────────────────────── -->
+  <section style="background:var(--surface)">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Common Questions</span>
+        <h2>Answers Before You Ask</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary>How much does interior painting cost in NYC?</summary>
+          <div class="faq-answer">Most rooms run $200–$400. Full apartments $800–$2,000 depending on size and condition. We offer free estimates — no surprise pricing.</div>
+        </details>
+        <details>
+          <summary>Are you licensed and insured?</summary>
+          <div class="faq-answer">Yes. Fully licensed and insured in New York State. We carry liability insurance and workers' compensation.</div>
+        </details>
+        <details>
+          <summary>Do you move and protect furniture?</summary>
+          <div class="faq-answer">We move and protect most furniture using drop cloths and plastic wrap. For large pieces, we'll work around them safely.</div>
+        </details>
+        <details>
+          <summary>What areas do you serve?</summary>
+          <div class="faq-answer">All five boroughs: Queens, Brooklyn, Manhattan, Bronx, and Staten Island.</div>
+        </details>
+      </div>
+      <div style="text-align:center;margin-top:2rem">
+        <a href="faq.html" class="btn btn-outline">See All Questions &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CTA Band ────────────────────────────────────────── -->
+  <section class="cta-band">
+    <div class="container">
+      <h2>Ready to Transform Your Space?</h2>
+      <p>Call or fill out our form — we respond within 24 hours.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center">
+        <a href="contact.html" class="btn btn-white btn-lg">Get a Free Estimate &rarr;</a>
+        <a href="tel:+13474698202" class="btn btn-lg" style="background:rgba(255,255,255,.15);color:#fff;border:2px solid rgba(255,255,255,.5)">(347) 469-8202</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── Footer ──────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">C Painting<span>Services</span></a>
+          <p>Licensed NYC painters serving all five boroughs since day one.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5>
+          <ul>
+            <li><a href="interior-painting.html">Interior Painting</a></li>
+            <li><a href="exterior-painting.html">Exterior Painting</a></li>
+            <li><a href="commercial-painting.html">Commercial Painting</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Boroughs</h5>
+          <ul>
+            <li><a href="brooklyn.html">Brooklyn</a></li>
+            <li><a href="queens.html">Queens</a></li>
+            <li><a href="manhattan.html">Manhattan</a></li>
+            <li><span>Bronx</span></li>
+            <li><span>Staten Island</span></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Contact</h5>
+          <ul>
+            <li><a href="tel:+13474698202">(347) 469-8202</a></li>
+            <li><a href="mailto:info@cpaintingservices.com">info@cpaintingservices.com</a></li>
+            <li><span>Mon–Sat 8AM–6PM</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 C Painting Services. All 5 NYC Boroughs.</span>
+        <a href="#">Yelp Reviews</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('main-nav');
+    hamburger.addEventListener('click', function () {
+      const open = nav.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+  </script>
 
 </body>
 </html>
