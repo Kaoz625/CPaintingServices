@@ -1,33 +1,37 @@
-# Replit Agent Task: CPaintingServices + CPaintingServicesBrooklyn (Consolidation)
+# Replit Agent Task: CPaintingServices
 
 ## Goal
-Consolidate CPaintingServices and CPaintingServicesBrooklyn into a single, clean professional painting contractor website that serves all NYC boroughs, with strong local SEO and a clear quote request flow.
+Elevate the existing CPaintingServices multi-page HTML site (already well-structured with borough pages, gallery, and services) to production quality — adding real imagery placeholders, a working quote form, Google Maps embed, and polishing SEO so it ranks for NYC painting contractor searches across all five boroughs.
 
 ## Tasks
-1. Merge the best content from both repos into one unified site — CPaintingServices becomes the canonical repo; CPaintingServicesBrooklyn can redirect here
-2. Build a hero section: clean white/navy professional aesthetic, headline "NYC's Trusted Painting Contractors", subline covering all boroughs, and a prominent "Get a Free Quote" CTA
-3. Create a Services section: Interior Painting, Exterior Painting, Commercial Painting, Wallpaper Removal, Color Consultation — each as a card with icon, description, and price range
-4. Build a Portfolio/Gallery section: before/after photo grid (use placeholder images) with project type labels (apartment, brownstone, office, etc.)
-5. Add a Service Area section: list all NYC boroughs served (Manhattan, Brooklyn, Queens, Bronx, Staten Island) with a simple NYC borough map graphic or icon grid
-6. Add Testimonials: 5 realistic reviews from NYC clients with names, boroughs, and star ratings
-7. Build a Quote Request form: name, email, phone, address, service type, square footage, preferred start date — submit to Supabase `quote_requests` table
-8. Add local SEO: borough-specific meta description, JSON-LD for LocalBusiness with serviceArea NYC, canonical URL
-9. Add Open Graph tags and a professional logo/favicon
-10. Ensure full mobile responsiveness
-11. Deploy to Cloudflare Pages
+1. Audit all existing pages (index.html, about.html, gallery.html, contact.html, interior-painting.html, exterior-painting.html, commercial-painting.html, brooklyn.html, queens.html, manhattan.html) — note what's placeholder vs. real content and fix any broken links or missing styles
+2. **Hero section (index.html)**: replace any stub content with a compelling headline ("NYC's Most Trusted Painters — Free Estimates, All 5 Boroughs"), a hero background image (use Unsplash painting crew placeholder), and two CTAs: "Get Free Quote" (scrolls to form) and "Call Now: (347) 469-8202"
+3. **Services section**: add before/after image comparison cards for Interior, Exterior, and Commercial painting using a CSS slider (no JS library needed — use checkbox hack or simple JS toggle)
+4. **Gallery page**: populate with 12 placeholder painting project images in a responsive masonry CSS grid; add filter buttons (Interior / Exterior / Commercial / Residential)
+5. **Quote form (contact.html)**: name, phone, email, service type dropdown, property type, borough, message, preferred contact time; submit via Formspree; add Google reCAPTCHA v3 placeholder (just the script tag + data-sitekey stub)
+6. **Google Maps embed**: on contact.html, embed a Google Maps iframe showing the NYC service area (use the embed API URL centered on Queens/NYC); add a "Service Area" section listing all five boroughs with borough-specific keywords
+7. **Borough pages** (brooklyn.html, queens.html, manhattan.html): each should have unique hero copy, a "Why Choose Us in [Borough]" section, 3 local testimonials with first name + street/neighborhood, and a borough-specific FAQ (3–5 questions)
+8. **SEO**: ensure each page has a unique <title>, meta description, canonical URL, and OG tags; add LocalBusiness schema JSON-LD to index.html (name, address, phone, areaServed, serviceType)
+9. **Performance**: lazy-load all images (add loading="lazy"), minify inline CSS, ensure the existing Google Fonts load with `display=swap`
+10. **CTA persistence**: add a sticky "Call Now" button on mobile (fixed bottom bar) visible on all pages
 
 ## Tech Stack
-- HTML/CSS/JS (or React if the existing codebase already uses it — match what's there)
-- Supabase (quote request storage)
-- Cloudflare Pages (static deploy)
+- Vanilla HTML5 / CSS3 / JavaScript (existing stack — do not convert to a framework)
+- Formspree for contact form
+- Google Maps embed (iframe)
+- JSON-LD structured data
+- Existing CSS file (css/main.css)
 
 ## Deploy Target
-Cloudflare Pages — connect `Kaoz625/CPaintingServices`. Never Vercel.
+Cloudflare Pages (static site, existing CNAME already set to cpaintingservices.nyctailblazers.com). Never Vercel.
 
 ## Done When
-- [ ] Services, Portfolio, Testimonials, and Quote sections all built
-- [ ] Quote form submits to Supabase
-- [ ] All 5 NYC boroughs listed in service area
-- [ ] JSON-LD LocalBusiness schema with serviceArea present
-- [ ] Mobile-responsive at 375px
-- [ ] All changes pushed to `Kaoz625/CPaintingServices` main branch
+- [ ] All pages load without 404s or broken asset links
+- [ ] Hero has real headline, CTA buttons, and hero image
+- [ ] Gallery shows 12 images with working filter buttons
+- [ ] Quote form on contact.html submits via Formspree
+- [ ] Google Maps embed renders on contact.html
+- [ ] Each borough page has unique hero copy + 3 testimonials + FAQ
+- [ ] LocalBusiness JSON-LD present on index.html
+- [ ] Mobile sticky "Call Now" bar visible on all pages
+- [ ] Lighthouse performance score ≥ 80 on mobile
